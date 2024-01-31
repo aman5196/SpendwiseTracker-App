@@ -1,4 +1,4 @@
-import'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -11,53 +11,94 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.blue,
-        title:  Text("Home".toUpperCase(),textAlign: TextAlign.center,),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          "Home".toUpperCase(),
+          textAlign: TextAlign.center,
+        ),
         leading: IconButton(
           icon: Icon(Icons.menu),
-          onPressed: (){},
+          onPressed: () {},
         ),
         actions: [
-         IconButton(
-          icon: Icon(Icons.notifications_active),
-           onPressed: () {},
-         ),
-
-
+          IconButton(
+            icon: Icon(Icons.notifications_active),
+            onPressed: () {},
+          ),
         ],
       ),
 
 
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+
+
+      body: Stack(
+        children:[ Column(
+
+
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+
           children: [
-            Text(
-              "Hello ${TotalSpend()}",
-              textAlign: TextAlign.center,
+            Expanded(
+              flex: 4,
+              child: Container(
+                color: Colors.blue,
+                child: Column(
+                  //mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Hello ${TotalSpend()}",
+                      //textAlign: TextAlign.center,
+                    ),
+                    //SizedBox(height: 10), // Add some spacing between the texts if needed
+                    Text(
+                      "Hello ${TotalSpend()}",
+                      //textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
             ),
-            Text(
-              "Hello ${TotalExpense()}",
-              textAlign: TextAlign.center,
+
+
+            Expanded(
+                flex: 6,
+                child: Container(
+                   color: Colors.deepOrangeAccent,
+                  //child: Text( "Hello ${TotalSpend()}",
+                  //textAlign: TextAlign.center,),
+              )
             ),
           ],
         ),
+            Positioned(
+              top: 100, // Adjust the position as needed
+              left: 20, // Adjust the position as needed
+              right: 20, // Adjust the position as needed
+             child: Container(
+                   height: 500, // Adjust the height as needed
+                   color: Colors.green, // Set the color of the container
+                child: Center(
+                    child: Text("Additional Container",
+                           style: TextStyle(color: Colors.white),),
+                ),
+             )
+            )
+      ]
       ),
     );
   }
 }
 
-
-
-int TotalSpend(){
+int TotalSpend() {
   var number = 10000;
   return number;
 }
-int TotalExpense(){
+
+int TotalExpense() {
   var number = 69000;
   return number;
 }
