@@ -133,6 +133,7 @@ class _DashboardState extends State<Dashboard> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home),label:'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.attach_money_rounded),label: 'Debt'),
+          
           BottomNavigationBarItem(icon: Icon(Icons.auto_graph),label:'expense'),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart),label:'analysis'),
 
