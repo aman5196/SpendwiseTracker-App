@@ -86,13 +86,13 @@ class _DashboardState extends State<Dashboard> {
                   children: [
                     Text(
                       "BDT ${TotalSpend()}",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 30,color: Colors.white),
                       //textAlign: TextAlign.center,
                     ),
                     //SizedBox(height: 10), // Add some spacing between the texts if needed
                     Text(
-                      "Hello ${TotalSpend()}",
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),
+                      "Balance",
+                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.white),
                       //textAlign: TextAlign.center,
                     ),
                   ],
@@ -135,21 +135,25 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       child: Row(
                         children: [
-                          Center(
+                          Container(
+                            margin: const EdgeInsets.only(left: 20),
+                            child: Center(
                               child: Text("Total Spent",
-                                     style: TextStyle(color: Colors.white),),
+                                style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),),
+                            ),
                           ),
                           Spacer(),
                           Container(
-                            margin: const EdgeInsets.all(5.0),
+                            width: 150,
+                            margin: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(4), // Adjust the border radius as needed
                             ),
 
                             child: Center(
-                              child: Text("BDT 2000 ",
-                                style: TextStyle(color: Colors.blue),),
+                              child: Text("BDT ${TotalSpend()} ",
+                                style: TextStyle(color: Colors.lightBlueAccent,fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
                           ),
                         ],
@@ -167,21 +171,25 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       child: Row(
                         children: [
-                          Center(
-                            child: Text("Total Spent",
-                              style: TextStyle(color: Colors.white),),
+                          Container(
+                            margin: const EdgeInsets.only(left: 20),
+                            child: Center(
+                              child: Text("Total Expense",
+                                style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),),
+                            ),
                           ),
                           Spacer(),
                           Container(
-                            margin: const EdgeInsets.all(5.0),
+                            width: 150,
+                            margin: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(4), // Adjust the border radius as needed
                             ),
 
                             child: Center(
-                              child: Text("BDT 2000 ",
-                                style: TextStyle(color: Colors.blue),),
+                              child: Text("BDT ${TotalExpense()} ",
+                                style: TextStyle(color: Colors.lightBlueAccent,fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
                           ),
                         ],
@@ -197,7 +205,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       child: Center(
                         child: Text("Expense Chart",
-                          style: TextStyle(color: Colors.blueAccent),),
+                          style: TextStyle(color: Colors.lightBlueAccent,fontWeight: FontWeight.bold,),),
                       ),
                     ),
 
@@ -221,7 +229,7 @@ class _DashboardState extends State<Dashboard> {
                               Color(0xFF4169E1),
                               Color(0xFFFFD700),
                             ],
-                            chartRadius: MediaQuery.of(context).size.width/2,
+                            chartRadius: MediaQuery.of(context).size.width/1.8,
                             chartValuesOptions: ChartValuesOptions(
                               showChartValuesOutside: true,
                               showChartValuesInPercentage:true,
@@ -261,13 +269,28 @@ class _DashboardState extends State<Dashboard> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home),label:'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.attach_money_rounded),label: 'Debt'),
-
-
+          BottomNavigationBarItem(
+            icon: SizedBox(width: 20), // Create a gap of width 20
+            label: '', // Set an empty label to prevent text from showing
+          ),
+          BottomNavigationBarItem(
+            icon: SizedBox(width: 20), // Create a gap of width 20
+            label: '', // Set an empty label to prevent text from showing
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.auto_graph),label:'expense'),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart),label:'analysis'),
 
         ],
       ) ,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue,
+
+
+          mini:false,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
     );
   }
