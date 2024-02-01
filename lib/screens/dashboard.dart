@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pie_chart/pie_chart.dart';
 import 'package:spendwise_tracker_app/screens/analysis_page.dart';
 import 'package:spendwise_tracker_app/screens/debt_page.dart';
 import 'package:spendwise_tracker_app/screens/expense_page.dart';
@@ -28,6 +29,16 @@ class _DashboardState extends State<Dashboard> {
 
   }
 */
+
+  Map<String ,double>datamap={
+    "RENT":18.47,
+    "GROCERY":17.70,
+    "FEES":4.25,
+    "MEDICINE":5,
+    "TRANSPORT":6,
+    "OTHER":20
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,9 +122,125 @@ class _DashboardState extends State<Dashboard> {
                  borderRadius: BorderRadius.circular(20), // Adjust the border radius as needed
                ), // Set the color of the container
 
-                child: Center(
-                    child: Text("Additional Container",
-                           style: TextStyle(color: Colors.white),),
+                child: Column(
+                  children: [
+
+
+                    Container(
+                      height: 50,
+                      margin: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.lightBlueAccent,
+                        borderRadius: BorderRadius.circular(4), // Adjust the border radius as needed
+                      ),
+                      child: Row(
+                        children: [
+                          Center(
+                              child: Text("Total Spent",
+                                     style: TextStyle(color: Colors.white),),
+                          ),
+                          Spacer(),
+                          Container(
+                            margin: const EdgeInsets.all(5.0),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(4), // Adjust the border radius as needed
+                            ),
+
+                            child: Center(
+                              child: Text("BDT 2000 ",
+                                style: TextStyle(color: Colors.blue),),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+
+
+                    Container(
+                      height: 50,
+                      margin: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.lightBlueAccent,
+                        borderRadius: BorderRadius.circular(4), // Adjust the border radius as needed
+                      ),
+                      child: Row(
+                        children: [
+                          Center(
+                            child: Text("Total Spent",
+                              style: TextStyle(color: Colors.white),),
+                          ),
+                          Spacer(),
+                          Container(
+                            margin: const EdgeInsets.all(5.0),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(4), // Adjust the border radius as needed
+                            ),
+
+                            child: Center(
+                              child: Text("BDT 2000 ",
+                                style: TextStyle(color: Colors.blue),),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+
+                    Container(
+                      margin: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
+                      ),
+                      child: Center(
+                        child: Text("Expense Chart",
+                          style: TextStyle(color: Colors.blueAccent),),
+                      ),
+                    ),
+
+
+
+
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          //color: Colors.red,
+                          borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
+                        ),
+                        child: Center(
+                          child:PieChart(
+                            dataMap: datamap,
+                            colorList: [
+                              Color(0xff8A2BE2),
+                              Color(0xFFFF4500),
+                              Color(0xFF32CD32),
+                              Color(0xFF4169E1),
+                              Color(0xFFFFD700),
+                            ],
+                            chartRadius: MediaQuery.of(context).size.width/2,
+                            chartValuesOptions: ChartValuesOptions(
+                              showChartValuesOutside: true,
+                              showChartValuesInPercentage:true,
+                              showChartValueBackground:false,
+                            ),
+                            legendOptions: LegendOptions(
+                              legendShape: BoxShape.rectangle,
+                              legendPosition: LegendPosition.bottom,
+                              showLegendsInRow: true,
+                            ),
+                          )
+                      
+                        ),
+                      ),
+                    ),
+
+
+
+                  ],
                 ),
              )
             )
@@ -129,11 +256,13 @@ class _DashboardState extends State<Dashboard> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         backgroundColor: Colors.blue,
+
         //onTap: onTap,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home),label:'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.attach_money_rounded),label: 'Debt'),
-          
+
+
           BottomNavigationBarItem(icon: Icon(Icons.auto_graph),label:'expense'),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart),label:'analysis'),
 
