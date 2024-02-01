@@ -42,6 +42,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -49,16 +50,18 @@ class _DashboardState extends State<Dashboard> {
         title: Text(
           "Home".toUpperCase(),
           textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),
         ),
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {},
+          color: Colors.white,
         ),
         actions: [
           IconButton(
             icon: Icon(Icons.notifications_active),
             onPressed: () {},
+            color: Colors.white,
           ),
         ],
       ),
@@ -259,11 +262,12 @@ class _DashboardState extends State<Dashboard> {
 
 
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        backgroundColor: Colors.blue,
+
 
         //onTap: onTap,
         items: [
