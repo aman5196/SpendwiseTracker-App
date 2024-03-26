@@ -183,25 +183,73 @@ class DebtPage extends StatelessWidget {
 
 
                       Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(
-                                50), // Adjust the border radius as needed
-                          ),
-                          child: Center(
-
-
-                          ),
+                        child: Column( // Use Column for vertical arrangement
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // Center vertically
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
+                              ),
+                              child: Center(
+                                child: Text(
+                                  " You have no debts ! ",
+                                  style: TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            // Add two more containers with similar structure, adjust text
+                            Container(
+                              margin: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
+                              ),
+                              child: Center(
+                                child: Text(
+                                  " Replace with Text 2 ", // Change text here
+                                  style: TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
+                              ),
+                              child: Center(
+                                child: Text(
+                                  " Replace with Text 3 ", // Change text here
+                                  style: TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
 
                       ),
 
-                       Container(
-                         margin: const EdgeInsets.all(10),
-                         height: 50,
-                         color: Colors.cyan,
+                      Container(
+                           margin: const EdgeInsets.all(10),
+                           height: 50,
+                           //color: Colors.cyan,
+                         child:Center(
+                           child: ElevatedButton(
+
+                             child: Text("ADD DEBT".toUpperCase(),style: TextStyle(color: Colors.white,
+                                 fontWeight: FontWeight.bold,),),
+                             style: ElevatedButton.styleFrom(
+                               primary: Colors.blue,
+                               elevation: 5,
+                             ),
+                             onPressed: () {},
+                           ),
+                         ),
+
+
                       ),
 
 
