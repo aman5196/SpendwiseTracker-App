@@ -17,7 +17,7 @@ class ExpensePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // color: Colors.blue,
+      // color: Colors.red,
 
       body: Stack(
           children: [
@@ -61,69 +61,54 @@ class ExpensePage extends StatelessWidget {
 
                   child: Column(
                     children: [
-
-
                       Container(
-                        height: 50,
-                        margin: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.circular(
-                              4), // Adjust the border radius as needed
-                        ),
-
-                      ),
-
-
-                      Container(
-                        height: 50,
-                        margin: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.circular(
-                              4), // Adjust the border radius as needed
-                        ),
-
-                      ),
-
-
-                      Container(
-                        margin: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                          //color: Colors.transparent,
-                          color: Colors.yellowAccent,
-                          borderRadius: BorderRadius.circular(
-                              50), // Adjust the border radius as needed
-                        ),
                         child: Center(
-                          child: Text("Expense Chart",
-                            style: TextStyle(color: Colors.lightBlueAccent,
-                              fontWeight: FontWeight.bold,),),
-                        ),
-                      ),
-
-
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(
-                                50), // Adjust the border radius as needed
-                          ),
-                          child: Center(
-
-
+                          child:  Text(
+                            " TODAY ", // Change text here
+                            style: TextStyle(color: Colors.lightBlue,fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                         ),
-
                       ),
-
                       Container(
                         margin: const EdgeInsets.all(10),
-                        height: 50,
-                        color: Colors.cyan,
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child:  Text(
+                            " Amount", // Change text here
+                            style: TextStyle(color: Colors.grey,fontSize: 18),
+                          ),
+                        ),
                       ),
+                      Container(
+                        margin: const EdgeInsets.all(10),
+                        //color: Colors.red,
+                        height: 200,
+                        child: ListView(
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.medical_services),
+                             textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[ 
+                                    Text('Map'),
+                                    Text('1000')
+                                  ]
+                              ),),
+                            ListTile(
+                              leading: Icon(Icons.photo_album),
+                              title: Text('Album'),
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.phone),
+                              title: Text('Phone'),
+                            ),
+                          ],
+                        ),
+
+                      ),
+
+
 
 
                     ],

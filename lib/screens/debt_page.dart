@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
+
 class DebtPage extends StatelessWidget {
 
   int TotalDebt() {
@@ -166,21 +167,6 @@ class DebtPage extends StatelessWidget {
                       ),
 
 
-                      Container(
-                        margin: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                          //color: Colors.transparent,
-                          color: Colors.yellowAccent,
-                          borderRadius: BorderRadius.circular(
-                              50), // Adjust the border radius as needed
-                        ),
-                        child: Center(
-                          child: Text("Expense Chart",
-                            style: TextStyle(color: Colors.lightBlueAccent,
-                              fontWeight: FontWeight.bold,),),
-                        ),
-                      ),
-
 
                       Expanded(
                         child: Column( // Use Column for vertical arrangement
@@ -188,44 +174,65 @@ class DebtPage extends StatelessWidget {
                           // Center vertically
                           children: [
                             Container(
-                              margin: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.all(0),
                               decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
+                                //color: Colors.red,
+                                borderRadius: BorderRadius.circular(0), // Adjust the border radius as needed
                               ),
                               child: Center(
                                 child: Text(
                                   " You have no debts ! ",
-                                  style: TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold),
+                                  style: TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold,fontSize: 25),
                                 ),
                               ),
                             ),
                             // Add two more containers with similar structure, adjust text
                             Container(
-                              margin: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.all(0),
                               decoration: BoxDecoration(
-                                color: Colors.red,
+                                //color: Colors.red,
                                 borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
                               ),
                               child: Center(
                                 child: Text(
-                                  " Replace with Text 2 ", // Change text here
-                                  style: TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold),
+                                  " April ", // Change text here
+                                  style: TextStyle(color: Colors.lightBlueAccent,fontSize: 20),
                                 ),
                               ),
                             ),
                             Container(
                               margin: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                color: Colors.red,
+                                //color: Colors.red,
                                 borderRadius: BorderRadius.circular(50), // Adjust the border radius as needed
                               ),
                               child: Center(
-                                child: Text(
-                                  " Replace with Text 3 ", // Change text here
-                                  style: TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold),
+                                child:  LinearProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>
+                                    (Colors.lightBlueAccent),
+                                  minHeight: 10,
+                                  value: 0.5,
+                                  semanticsLabel: 'Linear progress indicator',
+                                  backgroundColor: Colors.grey,
                                 ),
                               ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                //color: Colors.transparent,
+                                //color: Colors.yellowAccent,
+                                borderRadius: BorderRadius.circular(0), // Adjust the border radius as needed
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween, // Space evenly between children
+                                children: [
+                                  Text('BDT 0' ,style: TextStyle(color: Colors.lightBlueAccent,fontSize: 15,fontWeight: FontWeight.bold),), // Text at the start
+
+                                  Text('BDT 10000', style: TextStyle(color: Colors.lightBlueAccent,fontSize: 15,fontWeight: FontWeight.bold),), // Text at the end
+                                ],
+                              ),
+
                             ),
                           ],
                         ),
@@ -242,7 +249,7 @@ class DebtPage extends StatelessWidget {
                              child: Text("ADD DEBT".toUpperCase(),style: TextStyle(color: Colors.white,
                                  fontWeight: FontWeight.bold,),),
                              style: ElevatedButton.styleFrom(
-                               primary: Colors.blue,
+                               primary: Colors.lightBlueAccent,
                                elevation: 5,
                              ),
                              onPressed: () {},
