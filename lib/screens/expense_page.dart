@@ -64,7 +64,7 @@ class ExpensePage extends StatelessWidget {
                       Container(
                         child: Center(
                           child:  Text(
-                            " TODAY ", // Change text here
+                            " Today ", // Change text here
                             style: TextStyle(color: Colors.lightBlue,fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -82,7 +82,7 @@ class ExpensePage extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.all(10),
                         //color: Colors.red,
-                        height: 200,
+                        height: 250,
                         child: ListView(
                           children: [
                             ListTile(
@@ -91,18 +91,109 @@ class ExpensePage extends StatelessWidget {
                               title: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children:[ 
-                                    Text('Map'),
+                                    Text('Medicine'),
                                     Text('1000')
                                   ]
                               ),),
                             ListTile(
-                              leading: Icon(Icons.photo_album),
-                              title: Text('Album'),
-                            ),
+                              leading: Icon(Icons.fastfood),
+                              textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[
+                                    Text('FOOD'),
+                                    Text('500')
+                                  ]
+                              ),),
                             ListTile(
-                              leading: Icon(Icons.phone),
-                              title: Text('Phone'),
-                            ),
+                              leading: Icon(Icons.payment),
+                              textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[
+                                    Text('Tax'),
+                                    Text('50000')
+                                  ]
+                              ),),
+                          ],
+                        ),
+
+                      ),
+
+                      Container(
+                        child: Center(
+                          child:  Text(
+                            " This Month ", // Change text here
+                            style: TextStyle(color: Colors.lightBlue,fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(10),
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child:  Text(
+                            " Amount", // Change text here
+                            style: TextStyle(color: Colors.grey,fontSize: 18),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(10),
+                        //color: Colors.yellow,
+                        height: 290,
+                        child: ListView(
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.taxi_alert_outlined),
+                              textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[
+                                    Text('Transport'),
+                                    Text('5000')
+                                  ]
+                              ),),
+                            ListTile(
+                              leading: Icon(Icons.local_grocery_store),
+                              textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[
+                                    Text('Grocery'),
+                                    Text('15000')
+                                  ]
+                              ),),
+                            ListTile(
+                              leading: Icon(Icons.school),
+                              textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[
+                                    Text('Fees'),
+                                    Text('555000')
+                                  ]
+                              ),),
+                            ListTile(
+                              leading: Icon(Icons.hotel),
+                              textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[
+                                    Text('Rent'),
+                                    Text('12000')
+                                  ]
+                              ),),
+                            ListTile(
+                              leading: Icon(Icons.other_houses_sharp),
+                              textColor: Colors.lightBlue,
+                              title: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children:[
+                                    Text('Others'),
+                                    Text('90000')
+                                  ]
+                              ),),
                           ],
                         ),
 
