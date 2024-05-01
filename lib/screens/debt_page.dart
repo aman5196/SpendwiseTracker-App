@@ -249,7 +249,7 @@ class DebtPage extends StatelessWidget {
                              child: Text("ADD DEBT".toUpperCase(),style: TextStyle(color: Colors.white,
                                  fontWeight: FontWeight.bold,),),
                              style: ElevatedButton.styleFrom(
-                               primary: Colors.lightBlueAccent,
+                               backgroundColor: Colors.lightBlueAccent,
                                elevation: 5,
                              ),
                              onPressed: () {},
